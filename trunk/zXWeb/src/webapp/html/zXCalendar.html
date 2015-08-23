@@ -1,0 +1,347 @@
+
+<HTML>
+<HEAD>
+<title>CPA Advance - Calendar</title>
+<link href="../includes/zXStylesheet.css" rel="STYLESHEET" type="text/css">
+<script type="text/javascript" language="JavaScript" src="../Javascript/zX.js"></script>
+<script type="text/javascript" language="JavaScript">
+
+<!-- Begin
+var dDate;
+var dCurMonth;
+var dCurDayOfMonth;
+var dCurYear;
+
+dDate = new Date();
+dCurMonth = dDate.getMonth();
+dCurDayOfMonth = dDate.getDate();
+dCurYear = dDate.getFullYear();
+
+var objPrevElement = new Object();
+
+function fToggleColor(myElement) 
+{
+	var toggleColor = "#ff0000";
+
+	if (myElement.id == "calDateText") 
+	{
+		if (myElement.color == toggleColor) 
+		{
+			myElement.color = "";
+		} 
+		else 
+		{
+			myElement.color = toggleColor;
+		}
+	} 
+	else if (myElement.id == "calCell") 
+	{
+		for (var i in myElement.children) 
+		{
+			if (myElement.children[i].id == "calDateText") 
+			{
+				if (myElement.children[i].color == toggleColor) 
+				{
+					myElement.children[i].color = "";
+				} 
+				else 
+				{
+					myElement.children[i].color = toggleColor;
+	            }
+	         }
+		}
+	}
+}
+
+function fSetSelectedDay(myElement)
+{
+	if (myElement.id == "calCell") 
+	{
+		if (!isNaN(parseInt(myElement.children["calDateText"].innerText))) 
+		{
+			myElement.bgColor = "#c0c0c0";
+			objPrevElement.bgColor = "";
+
+			document.all.calSelectedDate.value = parseInt(myElement.children["calDateText"].innerText);
+
+			var cookieValue = document.all.calSelectedDate.value + "/" + 
+			frmCalendarSample.tbSelMonth.value + "/" + 
+			frmCalendarSample.tbSelYear.value;
+
+			setCookie("zXDate", cookieValue,"","/");
+	 
+			objPrevElement = myElement;
+
+			window.close();
+		}
+	}
+}
+
+function fGetDaysInMonth(iMonth, iYear) 
+{
+	var dPrevDate = new Date(iYear, iMonth, 0);
+	return dPrevDate.getDate();
+}
+
+function fBuildCal(iYear, iMonth, iDayStyle) 
+{
+	var aMonth = new Array();
+
+	aMonth[0] = new Array(7);
+	aMonth[1] = new Array(7);
+	aMonth[2] = new Array(7);
+	aMonth[3] = new Array(7);
+	aMonth[4] = new Array(7);
+	aMonth[5] = new Array(7);
+	aMonth[6] = new Array(7);
+
+	var dCalDate = new Date(iYear, iMonth-1, 1);
+	var iDayOfFirst = dCalDate.getDay();
+	var iDaysInMonth = fGetDaysInMonth(iMonth, iYear);
+	var iVarDate = 1;
+	var i, d, w;
+
+	if (iDayStyle == 2) 
+	{
+		aMonth[0][0] = "Sunday";
+		aMonth[0][1] = "Monday";
+		aMonth[0][2] = "Tuesday";
+		aMonth[0][3] = "Wednesday";
+		aMonth[0][4] = "Thursday";
+		aMonth[0][5] = "Friday";
+		aMonth[0][6] = "Saturday";
+	} 
+	else if (iDayStyle == 1) 
+	{
+		aMonth[0][0] = "Sun";
+		aMonth[0][1] = "Mon";
+		aMonth[0][2] = "Tue";
+		aMonth[0][3] = "Wed";
+		aMonth[0][4] = "Thu";
+		aMonth[0][5] = "Fri";
+		aMonth[0][6] = "Sat";
+	} 
+	else 
+	{
+		aMonth[0][0] = "Su";
+		aMonth[0][1] = "Mo";
+		aMonth[0][2] = "Tu";
+		aMonth[0][3] = "We";
+		aMonth[0][4] = "Th";
+		aMonth[0][5] = "Fr";
+		aMonth[0][6] = "Sa";
+	}
+
+	for (d = iDayOfFirst; d < 7; d++) 
+	{
+		aMonth[1][d] = iVarDate;
+		iVarDate++;
+	}
+
+	for (w = 2; w < 7; w++) 
+	{
+		for (d = 0; d < 7; d++) 
+		{
+			if (iVarDate <= iDaysInMonth) 
+			{
+				aMonth[w][d] = iVarDate;
+				iVarDate++;
+			}
+		}
+	}
+	
+	return aMonth;
+}
+
+function fDrawCal(iYear, iMonth, iCellWidth, iCellHeight, sDateTextSize, sDateTextWeight, iDayStyle) 
+{
+	var myMonth;
+
+	myMonth = fBuildCal(iYear, iMonth, iDayStyle);
+	document.write("<table border='1'>")
+	document.write("<tr>");
+	document.write("<td class=tit align='center' >" + myMonth[0][0] + "</td>");
+	document.write("<td class=tit align='center' >" + myMonth[0][1] + "</td>");
+	document.write("<td class=tit align='center' >" + myMonth[0][2] + "</td>");
+	document.write("<td class=tit align='center' >" + myMonth[0][3] + "</td>");
+	document.write("<td class=tit align='center' >" + myMonth[0][4] + "</td>");
+	document.write("<td class=tit align='center' >" + myMonth[0][5] + "</td>");
+	document.write("<td class=tit align='center' >" + myMonth[0][6] + "</td>");
+	document.write("</tr>");
+
+	var sw = 1;
+	var clss="nor";
+
+	for (w = 1; w < 7; w++) 
+	{
+		document.write("<tr>")
+		for (d = 0; d < 7; d++) 
+		{
+			//document.write("<td align='left' valign='top' width='" + iCellWidth + "' height='" + iCellHeight + "' id=calCell style='CURSOR:Hand' onMouseOver='fToggleColor(this)' onMouseOut='fToggleColor(this)' onclick=fSetSelectedDay(this)>");
+			if (sw != w) 
+			{
+				if (clss == 'nor') 
+				{
+					clss = 'alt'; 
+				} else 
+				{
+					clss = 'nor';
+				}
+				sw = w;
+			}
+			
+			document.write("<td class="+clss+" align='left' valign='top' width='" + iCellWidth + "' height='" + iCellHeight + "' id=calCell style='CURSOR:Hand' onMouseOver='fToggleColor(this)' onMouseOut='fToggleColor(this)' onclick=fSetSelectedDay(this)>");
+
+			if (!isNaN(myMonth[w][d])) 
+			{
+				document.write("<font id=calDateText onMouseOver='fToggleColor(this)' style='CURSOR:Hand;FONT-FAMILY:Arial;FONT-SIZE:" + sDateTextSize + ";FONT-WEIGHT:" + sDateTextWeight + "' onMouseOut='fToggleColor(this)' onclick=fSetSelectedDay(this)>" + myMonth[w][d] + "</font>");
+			} 
+			else 
+			{
+				document.write("<font id=calDateText onMouseOver='fToggleColor(this)' style='CURSOR:Hand;FONT-FAMILY:Arial;FONT-SIZE:" + sDateTextSize + ";FONT-WEIGHT:" + sDateTextWeight + "' onMouseOut='fToggleColor(this)' onclick=fSetSelectedDay(this)> </font>");
+			}
+			
+			document.write("</td>")
+		}
+		
+		document.write("</tr>");
+	}
+	
+	document.write("</table>")
+}
+
+function fUpdateCal(iYear, iMonth) 
+{
+	myMonth = fBuildCal(iYear, iMonth);
+	objPrevElement.bgColor = "";
+	document.all.calSelectedDate.value = "";
+
+	for (w = 1; w < 7; w++) 
+	{
+		for (d = 0; d < 7; d++) 
+		{
+			if (!isNaN(myMonth[w][d])) 
+			{
+				calDateText[((7*w)+d)-7].innerText = myMonth[w][d];
+			} 
+			else 
+			{
+				calDateText[((7*w)+d)-7].innerText = " ";
+			}
+		}
+	}
+}
+
+// End -->
+</SCRIPT>
+</HEAD>
+
+<BODY>
+<script type="text/javascript" language="JavaScript" for=window event=onload>
+<!-- Begin
+var strCookieDate =  new String("");
+var dCurDate = new Date();
+var arrDate;
+
+strCookieDate = getCookie("zXDate");
+
+// Immediately set the date to nothing in case window is closed without
+// selecting a value...
+setCookie("zXDate", "", "", "/");
+
+if (strCookieDate != "") 
+{
+	arrDate = strCookieDate.split("/");
+ 
+	if (!(arrDate.length != 3 || 
+		isNaN(arrDate[0]) || 
+		isNaN(arrDate[1])|| 
+		isNaN(arrDate[2]))) 
+	{
+		dCurDate.setDate(arrDate[0]);
+		dCurDate.setMonth(Number(arrDate[1]) - 1);
+
+		if (Number(arrDate[2]) < 100) 
+		{
+			dCurDate.setYear(Number(arrDate[2]) + 2000);
+		} 
+		else 
+		{
+			dCurDate.setYear(arrDate[2]);
+		}		
+	}
+} 
+
+frmCalendarSample.tbSelMonth.options[dCurDate.getMonth()].selected = true;
+for (i = 0; i < frmCalendarSample.tbSelYear.length; i++)
+	if (frmCalendarSample.tbSelYear.options[i].value == dCurDate.getFullYear())
+		frmCalendarSample.tbSelYear.options[i].selected = true;
+
+//  End -->
+
+</SCRIPT>
+<FORM name="frmCalendarSample" method="post" action="">
+	<INPUT type="hidden" name="calSelectedDate" value="">
+	<TABLE border="1">
+		<TR>
+			<TD>
+				<SELECT name="tbSelMonth" onChange='fUpdateCal(frmCalendarSample.tbSelYear.value, frmCalendarSample.tbSelMonth.value)'>
+					<OPTION value="1">January</OPTION>
+					<OPTION value="2">February</OPTION>
+					<OPTION value="3">March</OPTION>
+					<OPTION value="4">April</OPTION>
+					<OPTION value="5">May</OPTION>
+					<OPTION value="6">June</OPTION>
+					<OPTION value="7">July</OPTION>
+					<OPTION value="8">August</OPTION>
+					<OPTION value="9">September</OPTION>
+					<OPTION value="10">October</OPTION>
+					<OPTION value="11">November</OPTION>
+					<OPTION value="12">December</OPTION>
+				</SELECT>
+				<SELECT name="tbSelYear" onChange='fUpdateCal(frmCalendarSample.tbSelYear.value, frmCalendarSample.tbSelMonth.value)'>
+					<OPTION value="1990">1990</OPTION>
+					<OPTION value="1991">1991</OPTION>
+					<OPTION value="1992">1992</OPTION>
+					<OPTION value="1993">1993</OPTION>
+					<OPTION value="1994">1994</OPTION>
+					<OPTION value="1995">1995</OPTION>
+					<OPTION value="1996">1996</OPTION>
+					<OPTION value="1997">1997</OPTION>
+					<OPTION value="1998">1998</OPTION>
+					<OPTION value="1999">1999</OPTION>
+					<OPTION value="2000">2000</OPTION>
+					<OPTION value="2001">2001</OPTION>
+					<OPTION value="2002">2002</OPTION>
+					<OPTION value="2003">2003</OPTION>
+					<OPTION value="2004">2004</OPTION>
+					<OPTION value="2005">2005</OPTION>
+					<OPTION value="2006">2006</OPTION>
+					<OPTION value="2007">2007</OPTION>
+					<OPTION value="2008">2008</OPTION>
+					<OPTION value="2009">2009</OPTION>
+					<OPTION value="2010">2010</OPTION>
+					<OPTION value="2011">2011</OPTION>
+					<OPTION value="2012">2012</OPTION>
+					<OPTION value="2013">2013</OPTION>
+					<OPTION value="2014">2014</OPTION>
+					<OPTION value="2015">2015</OPTION>
+					<OPTION value="2016">2016</OPTION>
+					<OPTION value="2017">2017</OPTION>
+					<OPTION value="2018">2018</OPTION>
+					<OPTION value="2019">2019</OPTION>
+					<OPTION value="2020">2020</OPTION>
+				</SELECT>
+			</TD>
+		</TR>
+		<TR>
+			<TD>
+<script type="text/javascript" language="JavaScript">var dCurDate = new Date();
+	fDrawCal(dCurDate.getFullYear(), dCurDate.getMonth()+1, 30, 30, "12px", "bold", 1);
+</SCRIPT>
+			</TD>
+		</TR>
+	</TABLE>
+</FORM>
+</BODY>
+</HTML>

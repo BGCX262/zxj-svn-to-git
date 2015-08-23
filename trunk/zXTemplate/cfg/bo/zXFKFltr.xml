@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<entity>
+	<name>zXFKFltr</name>
+	<version><![CDATA[1.1]]></version>
+	<lastchange><![CDATA[1.4:69 - TM1.5.3.2 (pre-2.0 fixes) DGS20APR2005: Labels changed as requested by users]]></lastchange>
+	<label>
+		<EN>
+			<label><![CDATA[Foreign Key Filter]]></label>
+			<description><![CDATA[Foreign Key Filter]]></description>
+		</EN>
+	</label>
+	<size>zSmall</size>
+	<table>-</table>
+	<classname>zX.clsBO</classname>
+	<jclassname>org.zxframework.ZXBO</jclassname>
+	<primarykey>fltr</primarykey>
+	<auditable>none</auditable>
+	<deleterule>notallowed</deleterule>
+	<attributes>
+		<attribute>
+			<name>fltr</name>
+			<label>
+				<EN>
+					<label><![CDATA[Search]]></label>
+					<description><![CDATA[Search]]></description>
+				</EN>
+			</label>
+			<datatype>zString</datatype>
+			<password>zNo</password>
+			<multiline>zNo</multiline>
+			<length>30</length>
+			<precision>0</precision>
+			<optional>zYes</optional>
+			<searchmethod>zSimple</searchmethod>
+			<virtualcolumn>zNo</virtualcolumn>
+			<null>zNo</null>
+			<lock>zNo</lock>
+			<case>zMixed</case>
+			<outputlength>30</outputlength>
+		</attribute>
+	</attributes>
+	<attributegroups>
+	</attributegroups>
+	<security>
+	</security>
+</entity>

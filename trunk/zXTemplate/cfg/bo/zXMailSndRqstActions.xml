@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<entity>
+	<name>zXMailSndRqstActions</name>
+	<basedon>zXMailSndRqst</basedon>
+	<version><![CDATA[v1.0]]></version>
+	<lastchange><![CDATA[Replaces the old full size variant of zXMailSndRqst]]></lastchange>
+	<comment><![CDATA[This is based on the zXMailSndRqst Bus Obj, the only difference being that it has a foreign key relationship to tmsActn]]></comment>
+	<label>
+		<EN>
+			<label>Mail send request Mail send request</label>
+			<description>Mail send request Mail send request</description>
+		</EN>
+	</label>
+	<helpid>zXMailSndRqst_helpId</helpid>
+	<size>zSmall</size>
+	<table>zXMailSndRqst</table>
+	<sequence>seq_zXMailSndRqst</sequence>
+	<classname>zXMisc.clsMailSndRqst</classname>
+	<primarykey>id</primarykey>
+	<auditable>zNo</auditable>
+	<deleterule>notallowed</deleterule>
+	<attributes>
+		<attribute>
+			<name>rqstId</name>
+			<label>
+				<EN>
+					<label>Request id</label>
+					<description>Request id</description>
+				</EN>
+			</label>
+			<helpid>rqstId_helpId</helpid>
+			<datatype>zString</datatype>
+			<password>zNo</password>
+			<multiline>zNo</multiline>
+			<length>50</length>
+			<precision>0</precision>
+			<foreignkey></foreignkey>
+			<optional>zNo</optional>
+			<searchmethod>zSimple</searchmethod>
+			<column>rqstId</column>
+			<virtualcolumn>zNo</virtualcolumn>
+			<null>zNo</null>
+			<lock>zNo</lock>
+			<case>zMixed</case>
+			<outputlength>50</outputlength>
+		</attribute>
+	</attributes>
+	<attributegroups>
+	</attributegroups>
+	<security>
+	</security>
+</entity>

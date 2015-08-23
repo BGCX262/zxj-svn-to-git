@@ -1,0 +1,147 @@
+<html>
+<head>
+<title>Overview Documentation for zX</title>
+</head>
+
+<body bgcolor="white">
+
+<p>
+The java port relies heavily on the <a href="http://jakarta.apache.org/commons/">Apache commons libraries</a>.
+Some of the libraries are used only in one or two places and may be replaced by a local implementation. 
+Here are the common libraries used :
+</p>
+
+<ul>
+	<li>
+		<a href="http://jakarta.apache.org/commons/beanutils/">BeanUtils</a> -  Commons-BeanUtils provides easy-to-use wrappers around the Java reflection and 
+		introspection APIs. 
+		<i>This is only used in a couple of places when use edit messagers. 
+		This is being used indirectly by the Digestor library.</i>
+	</li>
+	<li>
+		<a href="http://jakarta.apache.org/commons/codec/">Codec</a> - Codec contains some general encoding/decoding algorithms. 
+		Includes some phonetic encoders, Hex, Base64, and a URL encoder. 
+		<i>This is being used by the soundex function in the StringUtils class.</i>
+	</li>
+	<li>
+		<a href="http://jakarta.apache.org/commons/collections/">Collections</a> - Commons-Collections provides a suite of classes that extend or 
+		augment the Java Collections Framework. 
+		<i>This is used indirectly by other Apache Commons libraries.</i>
+	</li>
+	<li>
+		<a href="http://jakarta.apache.org/commons/digester/">Digester</a>s - Commons-Digester is an XML-to-Java-object mapping utility commonly used 
+		for parsing XML configuration files. 
+		<i>This is used for parsing the xml configuration files. However this was
+		only started to be used on QueryDef onwards, the older code still needed to be refactored.</i>
+	</li>
+	<li>
+		<a href="http://jakarta.apache.org/commons/lang/">Lang</a> - Commons-Lang provides a very common set of utility classes that provide extra 
+		functionality for classes in java.lang. 
+		<i>This is used as it supplies a work for mimicing Enums in JDK 1.4. 
+		NOTE : This is now a feature of Java 5.</i>
+	</li>
+	<li>
+		<a href="http://jakarta.apache.org/commons/logging/">Logging</a> -  Commons-Logging is a wrapper around a variety of logging API implementations.
+		<i>The logging in the framework is based on the Apache Commons Logging, but it is more tightly intergrated
+		into the framework. We may switch back to this later on. This is used indirectly by other Apache Commons libraries.</i>
+	</li>
+</ul>
+
+Other libraries used by the framework :
+
+<ul>
+	<li>
+	<a href="http://ehcache.sourceforge.net/">Ehcache</a> -  Ehcache is a pure Java, in-process cache. <i>This is used
+	in various places to cache descriptors and other objects.</i>
+	</li>
+	<li>
+	<a href="http://jazzy.sourceforge.net/">Jazzy</a> - Jazzy is a set of APIs (Application Programming Interfaces) 
+	that allow you to add spell checking functionality to Java Applications. <i>This is optionally used by the special
+	spellchecker component. I would advice using Openoffice Spellchecker instead.</i>
+	</li>
+	<li>
+	<a href="http://groovy.codehaus.org/">Groovy </a> - Groovy is an agile dynamic language for the Java 2 Platform 
+	that has many of the features that people like so much in languages like Python, Ruby and Smalltalk, making them 
+	available to Java developers using a Java-like syntax. <i>This is a optional component used to all users to script
+	expressions using groovy.</i>
+	</li>
+	<li>
+	<a href="http://www.javaworld.com/javaqa/2003-01/01-qa-0110-timing_p.html">Hrtlib</a> - Simple timing library. 
+	<i>Used in development mode to time the execution of pages more accurately.</i>
+	</li>
+	<li>
+	<a href="http://www.jdom.org/">JDOM</a> - JDOM is a simple to use API for XML parsing.
+	<i>Used in the old Descriptor parsing and zX Config parsing. Need to port this to Digester.</i>
+	</li>
+	<li>
+	<a href="http://www.openoffice.org/">Openoffice SDK</a> - The OpenOffice.org SDK is an add-on for the OpenOffice.org 
+	office suite. It provides the necessary tools and documentation for programming the OpenOffice.org APIs and 
+	creating own extensions (UNO components) for OpenOffice.org. <i>Using this for the spellchecker component which
+	is now complete. And for the port of the docbuilder component.</i>
+	</li>
+	<li>
+	<a href="http://jaxen.org/">Jaxen</a> -  The jaxen project is a Java XPath Engine. jaxen is a universal 
+	object model walker, capable of evaluating XPath expressions across multiple models. Currently supported are dom4j, JDOM, and DOM.
+	<i>Currently this is only used in zX.configValue, when you want to retrieve values from  a dom object.</i>
+	</li>
+</ul>
+
+<p>
+We will try and streamline the number of required dependencies to the bare minimum.
+</p>
+
+<h3>Potential bottlenecks and solutions:</h3>
+
+<p>
+At the moment there is no performance problems, but as of yet the Java port has not been probably benchmarked and
+there is still alot of functionality that needs to implemented which may effect the performance. Here is a list of potentional
+problems and solutions. NOTE : Java is NOT as lightweight as VB, but it does offer some extra benifits.
+</p>
+
+<ul>
+	<li>
+	<i>Database latency : </i> This is always the biggest bottleneck in an application, one way of improving 
+	performance is by reducing the data transferred bettween the application and the database. 
+	The <a href="http://www.martinfowler.com/eaaCatalog/lazyLoad.html">Lazy Load</a> will only get the data as
+	the user needs it, here is an <a href="http://www.anands.net/articles/lazyLoad.html">example implementation</a>
+	this used the <a href="http://java.sun.com/j2se/1.3/docs/guide/reflection/proxy.html">Dynamic Proxy Class</a> 
+	available in JDK 1.3 and up. 
+	<br/><br/>
+	
+	Another way is by caching frequently used data that is not updated often. We could specify the caching in the 
+	framework business object and then use <a href="http://jcache.sourceforge.net/">JCache</a>  
+	or <a href="http://jakarta.apache.org/turbine/jcs/">JCS</a> to manage the cache. We could also use Websphere
+	build in caching. This can increase performance up to 10 times the speed.
+	<br/><br/>
+	
+	With some light intergration with Hibernate we could use its highly optimized sql and db engine to improve performance.
+	This is required anyway if we are to use implemented AS400 tables in Hibernate in CPA Direct or any other non-framework
+	java application.
+	<br/><br/>
+	</li>
+
+	<li>
+	<i>zx initialization overhead : </i> Each time a page is loaded zx goes under full initialization, this includes reading configuration
+	files and get data from the datbase. This is great for development as we can change settings and it is updated immediately.
+	However on a live system you do not need that flexibility. We could cache the database stuff and only reinitialization the
+	configuration settings if the file has been updated. We can store the cached settings in the HttpSession object and allow
+	Websphere to manage the security of access data from the session. NOTE : This is not cached.
+	<br/><br/>
+	</li>
+	
+	<li>
+	<i>XML parsing : </i>	At the moment there is only a very small overhead, but as the framework uses xml quite
+	heavily this could add up. We could use the Apache Commons Digester to read the XML configuration files, this should
+	double the performance and also make it easier to parse the xml config files. However the core zx config file parsing
+	may need to remain the same as it allows users to get values in a just-in-time way via the configVale method. There is 
+	also some areas in the Descriptor that uses just in time parsing. NOTE : Business objects and Pageflow xml parsing is cachable.
+	</li>
+</ul>
+
+<h3>Code Conventions</h3>
+<p>
+I have tried to stick as close as possible to the <a href="http://java.sun.com/docs/codeconv/html/CodeConvTOC.doc.html">standard java code conventions</a>.
+</p>
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<pageflow>
+	<name>zXExprtLst</name>
+	<helpid>zXExprtLst_helpid</helpid>
+	<title>
+		<EN><![CDATA[Export List]]></EN>
+	</title>
+	<htmldebug>zOff</htmldebug>
+	<propagateqs>zNo</propagateqs>
+	<baseurl>
+		<url><![CDATA[../asp/zXExprtLst.asp]]></url>
+		<urltype>zFixed</urltype>
+		<querystring>
+			<item>
+				<source><![CDATA[zXExprtLst]]></source>
+				<destination><![CDATA[-pf]]></destination>
+			</item>
+			<item>
+				<source><![CDATA[#qs.*-ss-s]]></source>
+				<destination><![CDATA[]]></destination>
+			</item>
+		</querystring>
+	</baseurl>
+	<actions>
+		<action type="zNull">
+			<helpid>zXExprtLst_title_helpid</helpid>
+			<name>title</name>
+			<title>
+				<EN><![CDATA[Export List]]></EN>
+			</title>
+			<left>0</left>
+			<top>0</top>
+			<link>
+			</link>
+			<formaction>
+				<urltype>zFixed</urltype>
+			</formaction>
+			<stickyqsaction></stickyqsaction>
+			<cached>zNo</cached>
+		</action>
+		<action type="zNull">
+			<helpid>zXExprtLst_buttons_helpid</helpid>
+			<name>buttons</name>
+			<left>0</left>
+			<top>0</top>
+			<link>
+			</link>
+			<formaction>
+				<urltype>zFixed</urltype>
+			</formaction>
+			<tags>
+				<zXForm><![CDATA[list]]></zXForm>
+			</tags>
+			<stickyqsaction></stickyqsaction>
+			<cached>zNo</cached>
+			<refs>
+				<item>
+					<name>zBack</name>
+					<startsubmenu>zNo</startsubmenu>
+					<url>
+						<url><![CDATA[javascript:top.window.close()]]></url>
+						<urltype>zFixed</urltype>
+						<frameno>0</frameno>
+					</url>
+					<label>
+						<EN><![CDATA[Close]]></EN>
+					</label>
+				</item>
+			</refs>
+		</action>
+		<action type="zNull">
+			<helpid>zXExprtLst_close_helpid</helpid>
+			<name>close</name>
+			<left>0</left>
+			<top>0</top>
+			<link>
+			</link>
+			<formaction>
+				<urltype>zAction</urltype>
+			</formaction>
+			<tags>
+				<zXJavascript><![CDATA[top.window.close();]]></zXJavascript>
+			</tags>
+			<stickyqsaction></stickyqsaction>
+			<cached>zNo</cached>
+		</action>
+	</actions>
+</pageflow>

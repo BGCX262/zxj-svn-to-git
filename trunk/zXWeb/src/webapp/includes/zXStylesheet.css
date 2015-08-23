@@ -1,0 +1,1051 @@
+.zxFormTitle
+{
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: 16px;
+    COLOR: indigo;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: transparent
+}
+.zxForm
+{
+    BACKGROUND-COLOR: floralwhite
+}
+.zxSupportFrame
+{
+    BACKGROUND-COLOR: indigo
+}
+.zxFormLabel
+{
+    FONT-SIZE: 10px;
+    COLOR: indigo;
+    TEXT-INDENT: 5pt;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: #d5d8b6
+}
+.zxFormInputMandatoryNumeric
+{
+    FONT-SIZE: 10px;
+    COLOR: black;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: khaki;
+    TEXT-ALIGN: right
+}
+
+.zxFormInputMandatoryLower
+{
+    FONT-SIZE: 10px;
+    TEXT-TRANSFORM: lowercase;
+    COLOR: black;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: khaki;
+    TEXT-ALIGN: left
+}
+.zxFormInputMandatoryUpper
+{
+    FONT-SIZE: 10px;
+    TEXT-TRANSFORM: uppercase;
+    COLOR: black;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: khaki;
+    TEXT-ALIGN: left
+}
+.zxFormInputMandatoryMixed
+{
+    FONT-SIZE: 10px;
+    COLOR: black;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: khaki;
+    TEXT-ALIGN: left
+}
+.zxFormInputMandatoryCapital
+{
+    FONT-SIZE: 12px;
+    TEXT-TRANSFORM: capitalize;
+    COLOR: black;
+    FONT-FAMILY: Verdana, Arial;
+    TEXT-ALIGN: left
+}
+.zxFormInputOptionalNumeric
+{
+    FONT-SIZE: 10px;
+    COLOR: black;
+    FONT-FAMILY: Verdana, Arial;
+    TEXT-ALIGN: right
+}
+.zxFormInputOptionalLower
+{
+    FONT-SIZE: 10px;
+    TEXT-TRANSFORM: lowercase;
+    COLOR: black;
+    FONT-FAMILY: Verdana, Arial
+}
+.zxFormInputOptionalUpper
+{
+    FONT-SIZE: 10px;
+    TEXT-TRANSFORM: uppercase;
+    COLOR: black;
+    FONT-FAMILY: Verdana, Arial
+}
+.zxFormInputOptionalMixed
+{
+    FONT-SIZE: 10px;
+    COLOR: black;
+    FONT-FAMILY: Verdana
+}
+.zxFormInputOptionalCapital
+{
+    FONT-SIZE: 10px;
+    TEXT-TRANSFORM: capitalize;
+    COLOR: black;
+    FONT-FAMILY: Verdana, Arial
+}
+.zxFormInputLockedNumeric
+{
+    FONT-SIZE: 12px;
+    COLOR: indigo;
+    FONT-FAMILY: Verdana, Arial;
+    TEXT-ALIGN: right
+}
+.zxFormInputLockedLower
+{
+    FONT-SIZE: 12px;
+    TEXT-TRANSFORM: lowercase;
+    COLOR: indigo;
+    FONT-FAMILY: Verdana, Arial
+}
+.zxFormInputLockedUpper
+{
+    FONT-SIZE: 12px;
+    TEXT-TRANSFORM: uppercase;
+    COLOR: indigo;
+    FONT-FAMILY: Verdana, Arial
+}
+.zxFormInputLockedMixed
+{
+    FONT-SIZE: 12px;
+    COLOR: indigo;
+    FONT-FAMILY: Verdana, Arial
+}
+.zxFormInputLockedCapital
+{
+    FONT-SIZE: 10px;
+    TEXT-TRANSFORM: capitalize;
+    COLOR: indigo;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: lightgrey
+}
+.zxSubmitButton
+{
+	/**
+    BORDER-RIGHT: outset;
+    BORDER-TOP: outset;
+    BORDER-LEFT: outset;
+    BORDER-BOTTOM: outset;
+    **/
+	
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: 10px;
+    COLOR: indigo;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: #cccc99;
+    TEXT-ALIGN: center
+}
+.zxRefButton
+{
+	/**
+    BORDER-RIGHT: outset;
+    BORDER-TOP: outset;
+    BORDER-LEFT: outset;
+    BORDER-BOTTOM: outset;
+	**/
+	
+    FONT-SIZE: 10px;
+    COLOR: indigo;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: #cccc99;
+    TEXT-ALIGN: center
+}
+.zxLookupButton
+{
+	/**
+    BORDER-RIGHT: outset;
+    BORDER-TOP: outset;
+    BORDER-LEFT: outset;
+    BORDER-BOTTOM: outset;
+	
+	FONT-SIZE: xx-small;
+	
+    **/
+	
+    COLOR: indigo;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: #cccc99
+}
+.zxAlert
+{
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: 12px;
+    COLOR: red;
+    FONT-STYLE: normal;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: white;
+    FONT-VARIANT: small-caps
+}
+.zxErrorCell
+{
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: larger;
+    COLOR: white;
+    BACKGROUND-COLOR: tomato
+}
+.zxTitle
+{
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: small;
+    COLOR: white;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: lightslategray;
+    FONT-VARIANT: small-caps
+}
+.zxVertical
+{
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: x-large;
+    COLOR: white;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: gainsboro
+}
+.zxNor
+{
+    FONT-SIZE: 10px;
+    COLOR: indigo;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: #f2f2e0
+}
+.zxEven
+{
+    FONT-SIZE: 10px;
+    COLOR: indigo;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: #e9e9df
+}
+.zxAlt
+{
+    FONT-SIZE: 10px;
+    COLOR: indigo;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: #e9e9df
+}
+.zxOdd
+{
+    FONT-SIZE: 10px;
+    COLOR: indigo;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: #f2f2e0
+}
+.zxErrorMsg
+{
+    FONT-SIZE: 10px;
+    COLOR: crimson;
+    FONT-FAMILY: Verdana, Arial
+}
+.zxAltMenuItem
+{
+    FONT-SIZE: 12px;
+    CURSOR: default;
+    COLOR: indigo;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: #e9e9df
+}
+.zxNorMenuItem
+{
+    FONT-SIZE: 12px;
+    CURSOR: default;
+    COLOR: indigo;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: #f2f2e0
+}
+.zxAltSubMenu
+{
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: 12px;
+    CURSOR: default;
+    COLOR: indigo;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: #e7e2d0
+}
+.zxNorSubMenu
+{
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: 12px;
+    CURSOR: default;
+    COLOR: indigo;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: #f2f2e0
+}
+.zxAltMenuItemNor
+{
+    FONT-SIZE: 12px;
+    CURSOR: default;
+    COLOR: indigo;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: aliceblue
+}
+.zxNorMenuItemNor
+{
+    FONT-SIZE: 12px;
+    CURSOR: default;
+    COLOR: indigo;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: #f2f2e0
+}
+.zxAltSubMenuNor
+{
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: 12px;
+    CURSOR: crosshair;
+    COLOR: indigo;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: aliceblue
+}
+.zxNorSubMenuNor
+{
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: 12px;
+    CURSOR: default;
+    COLOR: indigo;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: #f2f2e0
+}
+.zxMenuTop
+{
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: 16px;
+    COLOR: white;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: indigo;
+    TEXT-ALIGN: center
+}
+.zxFooter
+{
+    FONT-SIZE: 10px;
+    COLOR: white;
+    FONT-STYLE: italic;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: indigo;
+    TEXT-ALIGN: center
+}
+.zxMatrixLabel
+{
+    FONT-SIZE: 10px;
+    COLOR: white;
+    FONT-STYLE: italic;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: silver;
+    TEXT-ALIGN: center
+}
+.zxSearchOps
+{
+    FONT-SIZE: 10px;
+    COLOR: black;
+    FONT-FAMILY: Verdana, Arial
+}
+.zxLabelPlain
+{
+    FONT-SIZE: 10px;
+    COLOR: black;
+    FONT-FAMILY: Verdana, Arial
+}
+.zxInfoMsg
+{
+    FONT-SIZE: 10px;
+    COLOR: indigo;
+    FONT-STYLE: italic;
+    FONT-FAMILY: Verdana, Arial
+}
+.zxListHeader
+{
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: 10px;
+    COLOR: white;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: indigo;
+    TEXT-ALIGN: center
+}
+.zxDebug
+{
+    FONT-SIZE: 12px;
+    COLOR: black;
+    FONT-FAMILY: Arial,'Courier New';
+	display: block;
+
+	border-color: red;
+	border-size: 1px;
+ 	border-width: 2px;
+
+    margin: 3px;
+	padding: 3px 3px 3px 3px;
+	
+	border-style: solid none solid none;
+    BACKGROUND-COLOR: gold;
+}
+.zxSoftMsg
+{
+    FONT-SIZE: 10px;
+    COLOR: black;
+    FONT-STYLE: italic;
+    FONT-FAMILY: Verdana, Arial
+}
+.zxFormSubTitle
+{
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: 10px;
+    COLOR: indigo;
+    TEXT-INDENT: 12pt;
+    FONT-FAMILY: Verdana, Arial;
+    TEXT-ALIGN: left
+}
+.zxTabActive
+{
+    BORDER-RIGHT: outset;
+    BORDER-TOP: outset;
+    BORDER-LEFT: outset;
+    
+    PADDING-RIGHT: 0px;
+    PADDING-LEFT: 0px;
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: 12px;
+    PADDING-BOTTOM: 2px;
+    MARGIN: 0px;
+    CURSOR: hand;
+    COLOR: indigo;
+    PADDING-TOP: 0px;
+    BORDER-BOTTOM: thin;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: white;
+    TEXT-ALIGN: center
+}
+.zxTabInactive
+{
+    BORDER-RIGHT: outset;
+    BORDER-TOP: thin outset;
+    BORDER-LEFT: outset;
+    
+    PADDING-RIGHT: 0px;
+    PADDING-LEFT: 0px;
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: 10px;
+    PADDING-BOTTOM: 2px;
+    MARGIN: 0px;
+    CURSOR: hand;
+    COLOR: indigo;
+    PADDING-TOP: 0px;
+    BORDER-BOTTOM: thin;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: lightgrey;
+    TEXT-ALIGN: center
+}
+.zxFKLabel
+{
+    FONT-SIZE: 10px;
+    COLOR: black;
+    FONT-STYLE: italic;
+    FONT-FAMILY: Verdana, Arial
+}
+.zxTreeVoid
+{
+    BACKGROUND-COLOR: #f2f2e0
+}
+.zXSmallButton
+{
+    BORDER-RIGHT: thin outset;
+    BORDER-TOP: thin outset;
+    BORDER-LEFT: thin outset;
+    BORDER-BOTTOM: thin outset;
+    
+    FONT-WEIGHT: lighter;
+    FONT-SIZE: 7pt;
+    COLOR: black;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: #cccc99;
+    TEXT-ALIGN: center
+}
+.zxAlt2
+{
+    FONT-SIZE: 10px;
+    COLOR: indigo;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: aliceblue
+}
+.zxGridNew
+{
+    FONT-SIZE: 10px;
+    COLOR: indigo;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: lightgrey
+}
+.zxPopupMenuAlt
+{
+    FONT-SIZE: 12px;
+    CURSOR: default;
+    COLOR: black;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: #cccc99
+}
+.zxPopupMenuNor
+{
+    FONT-SIZE: 12px;
+    CURSOR: default;
+    COLOR: white;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: indigo
+}
+.zXFormInputLocked
+{
+    FONT-SIZE: 12px;
+    COLOR: indigo;
+    FONT-FAMILY: Verdana, Arial
+}
+.zXTabDeactive
+{
+    BORDER-RIGHT: outset;
+    BORDER-TOP: outset;
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: 10px;
+    BORDER-LEFT: outset;
+    CURSOR: default;
+    COLOR: darkgray;
+    BORDER-BOTTOM: medium none;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: lightgrey;
+    TEXT-ALIGN: center
+}
+.zXProgressDone
+{
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: 10px;
+    COLOR: white;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: indigo
+}
+.zXProgressToDo
+{
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: 10px;
+    COLOR: indigo;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: white
+}
+.zXMenuTopNoAlign
+{
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: small;
+    COLOR: white;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: indigo
+}
+.zXListHeaderLeftAlign
+{
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: 10px;
+    COLOR: white;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: indigo
+}
+.zXDetailsHeader
+{
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: 7pt;
+    COLOR: white;
+    FONT-STYLE: italic;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: indigo;
+    TEXT-ALIGN: center
+}
+.zXDetails
+{
+    FONT-SIZE: 7pt;
+    COLOR: indigo;
+    FONT-FAMILY: Verdana, Arial;
+    TEXT-ALIGN: center
+}
+.zXAmber
+{
+    FONT-SIZE: 10px;
+    COLOR: darkorange;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: #f2f2e0
+}
+.zXAmberOdd
+{
+    FONT-SIZE: 10px;
+    COLOR: darkorange;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: #f2f2e0
+}
+.zXAmberEven
+{
+    FONT-SIZE: 10px;
+    COLOR: darkorange;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: #e9e9df
+}
+.zXRed
+{
+    FONT-SIZE: 10px;
+    COLOR: red;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: #f2f2e0
+}
+.zXRedEven
+{
+    FONT-SIZE: 10px;
+    COLOR: red;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: #e9e9df
+}
+.zXRedOdd
+{
+    FONT-SIZE: 10px;
+    COLOR: red;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: #f2f2e0
+}
+.zXGreen
+{
+    FONT-SIZE: 10px;
+    COLOR: green;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: #f2f2e0
+}
+.zXGreenEven
+{
+    FONT-SIZE: 10px;
+    COLOR: green;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: #e9e9df
+}
+.zXGreenOdd
+{
+    FONT-SIZE: 10px;
+    COLOR: green;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: #f2f2e0
+}
+.zXGrey
+{
+    FONT-SIZE: 10px;
+    COLOR: gray;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: #f2f2e0
+}
+.zXGreyEven
+{
+    FONT-SIZE: 10px;
+    COLOR: gray;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: #e9e9df
+}
+.zXGreyOdd
+{
+    FONT-SIZE: 10px;
+    COLOR: gray;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: #f2f2e0
+}
+.zxBoldEven
+{
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: 10px;
+    COLOR: indigo;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: #e9e9df
+}
+.zxBoldOdd
+{
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: 10px;
+    COLOR: indigo;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: #f2f2e0
+}
+.zxTxt
+{
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: small;
+    COLOR: indigo;
+    FONT-FAMILY: Verdana, Arial
+}
+FORM
+{
+    MARGIN-TOP: 0px
+}
+.zXNarr
+{
+    FONT-SIZE: 10px;
+    COLOR: gray;
+    FONT-FAMILY: Verdana, Arial
+}
+.zxInvisible
+{
+    DISPLAY: none;
+    VISIBILITY: hidden
+}
+.zXBarCode39
+{
+    FONT-WEIGHT: 100;
+    FONT-SIZE: 60px;
+    MARGIN-LEFT: 10px;
+    COLOR: black;
+    MARGIN-RIGHT: 10px;
+    FONT-FAMILY: '8020 3 of 9', Arial
+}
+.zxBGGreen
+{
+    FONT-FAMILY: Verdana;
+    BACKGROUND-COLOR: #ccff99
+}
+.zxBGAmber
+{
+    FONT-FAMILY: Verdana;
+    BACKGROUND-COLOR: #ffff66
+}
+.zxBGRed
+{
+    FONT-FAMILY: Verdana;
+    BACKGROUND-COLOR: #ffcc99
+}
+.zxHeadingLabel
+{
+    BORDER-TOP: indigo solid;
+    FONT-SIZE: small;
+    COLOR: indigo;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: #d5d8b6
+}
+.zxHeadingText
+{
+    BORDER-TOP: indigo solid;
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: medium;
+    COLOR: indigo;
+    FONT-FAMILY: Verdana, Arial
+}
+.zxLargeMsg
+{
+    FONT-SIZE: medium;
+    COLOR: indigo;
+    FONT-STYLE: italic;
+    FONT-FAMILY: Verdana, Arial
+}
+.zXDetailsBold
+{
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: 10px;
+    COLOR: indigo;
+    FONT-FAMILY: Verdana, Arial
+}
+.zXFormLabelBold
+{
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: 10px;
+    COLOR: indigo;
+    TEXT-INDENT: 5pt;
+    FONT-FAMILY: Verdana;
+    BACKGROUND-COLOR: #d5d8b6
+}
+.zXFormLabelMerged
+{
+    FONT-SIZE: 10px;
+    COLOR: indigo;
+    TEXT-INDENT: 5pt;
+    FONT-FAMILY: Verdana
+}
+.zXCalendarCell
+{
+    FONT-SIZE: 10px;
+    COLOR: indigo;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: #f2f2e0
+}
+.zXCalendarCellOdd
+{
+    FONT-SIZE: 10px;
+    COLOR: indigo;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: #f2f2e0
+}
+.zXCalendarCellEven
+{
+    FONT-SIZE: 10px;
+    COLOR: indigo;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: #e9e9df
+}
+.zXCalendarTitle
+{
+    FONT-SIZE: 12px;
+    COLOR: white;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: indigo
+}
+.zXCalendarNormal
+{
+    FONT-SIZE: 10px;
+    COLOR: indigo;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: #cccccc
+}
+.zXCalendarNormalEven
+{
+    FONT-SIZE: 10px;
+    COLOR: indigo;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: #ccccff
+}
+.zXCalendarNormalOdd
+{
+    FONT-SIZE: 10px;
+    COLOR: indigo;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: #cccccc
+}
+.zXCalendarCurrent
+{
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: 10px;
+    COLOR: red;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: #f2f2e0
+}
+.zXCalendarCurrentEven
+{
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: 10px;
+    COLOR: red;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: #e9e9df
+}
+.zXCalendarCurrentOdd
+{
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: 10px;
+    COLOR: red;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: #f2f2e0
+}
+.zXCalendarEmpty
+{
+    FONT-SIZE: 10px;
+    COLOR: indigo;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: #cccccc
+}
+.zxTabActiveVertical
+{
+    BORDER-BOTTOM: outset;
+    BORDER-RIGHT: outset;
+    BORDER-TOP: outset;
+    
+    BORDER-LEFT: thin;
+    PADDING-RIGHT: 0px;
+    PADDING-BOTTOM: 0px;
+    PADDING-LEFT: 0px;
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: 12px;
+    MARGIN: 0px;
+    CURSOR: hand;
+    COLOR: indigo;
+    PADDING-TOP: 0px;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: white;
+    TEXT-ALIGN: center
+}
+.zxTabInactiveVertical
+{
+    BORDER-BOTTOM: outset;
+    BORDER-RIGHT: thin outset;
+    BORDER-TOP: outset;
+    
+    PADDING-RIGHT: 0px;
+    PADDING-LEFT: 0px;
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: 10px;
+    PADDING-BOTTOM: 2px;
+    MARGIN: 0px;
+    CURSOR: hand;
+    COLOR: indigo;
+    PADDING-TOP: 0px;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: lightgrey;
+    TEXT-ALIGN: center
+}
+.zxTotalCell
+{
+    BORDER-TOP: black thin solid;
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: xx-small;
+    COLOR: indigo;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: #c6c6c6
+}
+.zxTotalRow
+{
+    FONT-SIZE: xx-small;
+    COLOR: indigo;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: transparent
+}
+.zxfklookup {
+	FONT-SIZE: 12px;  
+	FONT-FAMILY: Verdana, Arial;
+	position: absolute;
+	color: indigo;
+	background-color: white;
+	border: 1px outset black;
+	visibility: hidden;
+	clear: left;
+}
+.zxfklookup ul {
+	padding: 0;
+	margin: 0;
+}
+.zxfklookup li {
+	display: block;
+	cursor: pointer;
+	margin: 1px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+.zxfklookup li.selected {
+	background-color: darkblue;
+	color: white;
+}
+.zxDebugPFBlock
+{
+	border: indigo;
+	border-size: 1px;
+ 	border-width: 1px;
+    margin: 2px;
+	width : 99%;
+	padding: 3px 3px 3px 3px;
+	border-style: solid dashed solid dashed;
+}
+.zxDebugPFBlockTitle {
+    FONT-SIZE: 12px;
+	COLOR: indigo;
+    FONT-FAMILY: Verdana,'Courier New';
+	position : relative;
+	top : 10px;
+	left : 25px;
+	background-color : white;
+    margin: 1px;
+	padding : 0px 0px;
+}
+#tooltip {
+	POSITION:absolute;
+	VISIBILITY:hidden;
+	FONT-FAMILY: Arail, Verdana,'Courier New';
+	FONT-SIZE: 10px;
+	border:solid 1px black; 
+    padding:1px; 
+    color:black;
+    top:20px; 
+    left:90px;
+    background-color:#ffffcc; 
+    layer-background-color:#ffffcc;
+    z-index:100; 
+}
+#tooltipvisible {
+	FONT-FAMILY: Arail, Verdana,'Courier New';
+	FONT-SIZE: 10px;
+	border:solid 1px black; 
+    padding:1px; 
+    color:black;
+    top:20px; 
+	max-width:250;
+    left:90px; 
+	white-space: nowrap;
+    background-color:#ffffcc; 
+    layer-background-color:#ffffcc;
+    z-index:100; 
+}
+#createpopup {
+	FONT-FAMILY: Verdana,'Courier New';
+	POSITION:absolute;
+	left : -10;
+	Z-INDEX:200;
+}
+.zxSubmitButton[disabled]
+{
+    COLOR: gray;
+}
+.zxRefButton[disabled]
+{
+    COLOR: gray;
+}
+.zXMenuSearch{
+	 font-size: 10px;
+	 background-color: darkgray;
+	 border: 1px solid #666666;
+}
+.zXMenuSearch:focus { 
+	 background-color: #CCCCCC;
+}
+
+BODY  {
+    BEHAVIOR: url("../includes/csshover.htc")
+}
+
+#listform tbody tr:hover  { 
+	background: #DCDFF8;
+	color:white;
+}
+
+TR.zxAlt:hover, 
+TR.zxNor:hover, 
+TR.zXBoldEven:hover,
+TR.zXBoldOdd:hover
+{
+	background: #DCDFF8;
+	color:white;
+}
+
+.barcode {
+	font-family: "Free 3 of 9";
+	font-size: 60px;
+	text-align: right;
+	padding-left: 10px;
+}
+.zxMenuBar
+{
+    BORDER-RIGHT: medium none;
+    PADDING-RIGHT: 0px;
+    BORDER-TOP: medium none;
+    PADDING-LEFT: 0px;
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: x-small;
+    PADDING-BOTTOM: 2px;
+    MARGIN: 0px;
+    BORDER-LEFT: medium none;
+    COLOR: indigo;
+    PADDING-TOP: 0px;
+    BORDER-BOTTOM: thin inset;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: white;
+    TEXT-ALIGN: left
+}
+.zxMenuButton
+{
+    BORDER-RIGHT: inset;
+    BORDER-TOP: medium none;
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: xx-small;
+    BORDER-LEFT: medium none;
+    CURSOR: hand;
+    COLOR: indigo;
+    BORDER-BOTTOM: medium none;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: white;
+    TEXT-ALIGN: center
+}

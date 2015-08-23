@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/java"/>
+	<classpathentry kind="src" path="src/test"/>
+	<classpathentry exported="true" sourcepath="C:/projects/devl/Java/zXLibSrc/beanutils" kind="lib" path="lib/commons-beanutils.jar"/>
+	<classpathentry exported="true" sourcepath="C:/projects/devl/Java/zXLibSrc/codec" kind="lib" path="lib/commons-codec.jar"/>
+	<classpathentry exported="true" sourcepath="C:/projects/devl/Java/zXLibSrc/collections" kind="lib" path="lib/commons-collections.jar"/>
+	<classpathentry exported="true" sourcepath="C:/projects/devl/Java/zXLibSrc/digester" kind="lib" path="lib/commons-digester.jar"/>
+	<classpathentry exported="true" sourcepath="C:/projects/devl/Java/zXLibSrc/lang" kind="lib" path="lib/commons-lang.jar"/>
+	<classpathentry exported="true" sourcepath="C:/projects/devl/Java/zXLibSrc/ehcache" kind="lib" path="lib/ehcache.jar"/>
+	<classpathentry exported="true" sourcepath="C:/projects/devl/Java/zXLibSrc/groovy" kind="lib" path="lib/groovy.jar"/>
+	<classpathentry exported="true" sourcepath="C:/projects/devl/Java/zXLibSrc/jdom" kind="lib" path="lib/jdom.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jta.jar"/>
+	<classpathentry exported="true" sourcepath="C:/projects/devl/Java/zXLibSrc/hrtlib/src" kind="lib" path="lib/hrtlib.jar"/>
+	<classpathentry exported="true" sourcepath="C:/projects/devl/Java/zXLibSrc/jazzy/src" kind="lib" path="lib/jazzy.jar"/>
+	<classpathentry exported="true" sourcepath="C:/projects/devl/Java/zXLibSrc/junit/src.jar" kind="lib" path="lib/junit.jar"/>
+	<classpathentry exported="true" sourcepath="C:/projects/devl/Java/zXLibSrc/log4j" kind="lib" path="lib/log4j.jar"/>
+	<classpathentry exported="true" sourcepath="C:/projects/devl/Java/zXLibSrc/piccolo" kind="lib" path="lib/Piccolo.jar"/>
+	<classpathentry exported="true" sourcepath="C:/projects/devl/Java/zXLibSrc/mysql" kind="lib" path="lib/mysql.jar"/>
+	<classpathentry exported="true" sourcepath="C:/Projects/devl/Java/zXLibSrc/jaxen" kind="lib" path="lib/jaxen.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Program Files/OpenOffice.org 2.0/program/classes/java_uno.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Program Files/OpenOffice.org 2.0/program/classes/juh.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Program Files/OpenOffice.org 2.0/program/classes/jurt.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Program Files/OpenOffice.org 2.0/program/classes/jut.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Program Files/OpenOffice.org 2.0/program/classes/ridl.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Program Files/OpenOffice.org 2.0/program/classes/unoil.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry sourcepath="C:/projects/devl/Java/zXLibSrc/logging" kind="lib" path="lib/commons-logging.jar"/>
+	<classpathentry sourcepath="C:/projects/devl/Java/zXLibSrc/servlet" kind="lib" path="lib/jsp-api.jar"/>
+	<classpathentry sourcepath="C:/projects/devl/Java/zXLibSrc/servlet" kind="lib" path="lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="lib/oscache.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

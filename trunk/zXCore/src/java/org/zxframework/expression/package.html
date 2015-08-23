@@ -1,0 +1,173 @@
+<html>
+<head>
+<title>Overview Documentation for zX Expressions</title>
+</head>
+
+<body>
+<p>Expressions is a rich scripting language to allow developers to quick get value that are live in the framework.</p>
+
+<p>
+zX has a built-in macro language referred to as the expression language. 
+The expression language was originally designed as a simple way to provide the flexibility of 
+dynamic value in strategic places. Over time, the expression language has evolved to a 
+fully functional macro language that can be extended relatively easily.
+</p>
+
+<p>
+The syntax of the expression language is based on functional languages (like LISP) where everything is a 
+function call with parameters. For example: 1 + 2 would be expressed as add(1, 2).  
+There were two good reasons to implement the expressions as a functional language:
+</p>
+
+<ul>
+<li>
+A functional syntax is easier and quicker to parse than procedural languages
+</li>
+<li>
+A functional language was the better option given the original low-ambitions of expressions
+</li>
+</ul>
+
+<p>
+However, given the importance of expressions in many zX applications, it is often suggested 
+that the functional syntax is cumbersome and difficult to maintain. Point taken….
+</p>
+
+<p>
+At the heart of the expressions is the object <i>ExpressionHandler</i>. zX is used as the factory for this object. 
+The expression handler is the only object that developers need to work with expressions.
+</p>
+
+<p>
+Expressions can be evaluated in two ways: by executing expressions that have been parsed and stored or 
+by evaluating a string that represents an expression.  The set / execute method is only used by advanced 
+applications that use expressions as an integral part of the functionality (for example rule engines). 
+All expressions are stored in the expression cache, even when they are executed using the evaluate method. 
+Each expression that is successfully parsed is stored as an instance of <i>Expression</i>.
+</p>
+
+
+<p>There are three main things you can do with an expression:</p>
+
+<ul>
+<li>
+<i>Evaluate.</i> Evaluate the expression and return its value
+</li>
+<li>
+<i>Describe.</i> Describe the expression in English (this is useful for maintenance of expressions)
+</li>
+<li>
+<i>API.</i> Give the API of a single expression function (this is used by the repository editor to provide 
+			support for expression editing)
+</li>
+</ul>
+
+<h3>Control Statements</h3>
+
+<p>Once we were making more use of expressions we found an important shortcoming of the way expressions 
+were evaluated. When evaluating an expression, the system always evaluates all parameters for a function 
+and than passes this as a collection of arguments to the handler that implements the function (see next paragraph).
+<br/>
+Imagine the following functionality:
+</p>
+
+<table border="1">
+<tr><td>
+<pre>
+<code>
+ if (i != 0) {
+ 	function = 8 / i;
+ } else {
+ 	function = -1;
+ }
+</code>
+</pre>
+</td></tr>
+</table>
+
+<p>Implemented in the expression language as follows:</p>
+
+<table border="1">
+<tr><td>
+<pre>
+<code>
+if(ne(i,0),div(8,[i]),-1)
+</code>
+</pre>
+</td></tr>
+</table>
+
+<p>
+The ‘if’ function takes 3 parameter: the condition, the ‘true value’ and the ‘false value’. 
+However, as described earlier, the system will evaluate all parameters and pass them as a 
+collection to the if-function handler. This can thus result in a divide-by-zero situation.
+</p>
+
+<p>
+In order to cater for such (and many other) scenarios, we have introduce control statement 
+in version 1.4 of zX. There are a number of control statements, ‘if’ being one of them 
+and each control statement has a functional counterpart (for backward compatibility). 
+Each control statement function name starts with an underscore (e.g. ‘_id’ and ‘_and’). 
+Although it is legal to start a function name with an underscore, it is for this reason that you shouldn’t.
+</p>
+
+<p>
+When the system evaluates control statements, it will first evaluate the parameter that defines what parameters 
+are relevant. All non-relevant parameters are simply ignored. 
+</p>
+
+<h3>Function Handlers</h3>
+
+<p>
+All functions supported by the expression handler are implemented in function handlers. 
+The zX core comes with 2 handlers: the default handler and the business object handler 
+(ExprFHBO and <i>ExprFHDefault</i>). All handlers must implement the <i>ExprFH</i> interface. 
+This is all described in great detail in the document on ‘Extending the Framework’.
+</p>
+
+<p>
+Any number of function handlers can be ‘registered’ by simply adding the class name 
+and logical name to the application configuration file.  If the logical name is ‘myLib’ than all 
+functions prefixed with ‘myLib.’ are assumed to be handled by that handler.
+</p>
+
+<h3>User Defined Functions</h3>
+
+<p>
+Functions that are prefixed with ‘usr.’ are user defined functions (you would be excused
+to think that there would be a function handler that was registered with the logical name ‘usr’).
+</p>
+
+<p>
+You can store expression functions in the table <i>zXUsrFnctnDfntn</i>. Each expression in this table is 
+stored with a name and number of parameters.  You can now refer to this expression definition in the 
+table as <i>usr.functionName</i>. In the function definition you refer to the parameters as <i>usrP1</i>, 
+<i>usrP2</i>, etc.
+</p>
+
+<p>
+User defined functions can be useful to create ‘short cuts’ for standard expressions. 
+Note that developing a bespoke function  handler should be considered where speed, 
+control and exception handling are essential.
+</p>
+
+<h3>Iterators</h3>
+
+<p>
+Iterators are a mechanism for expressions to loop over items. The <i>_loopOver</i> 
+control statement (the only control statement that does not have a functional counterpart) 
+can be used to loop over the items in an iterator and execute an expression for all iterations.
+</p>
+
+<p>
+It is beyond the scope of this document to explain the workings of iterators. 
+Sufficient to say that iterators are implemented as objects that implement the <i>ExprFHI</i> abstract class.
+ Two iterator implementations are provided as part of zX core: <i>ExprFHIDefault</i> and <i>ExprFHIRS</i>, 
+the first for a collection of values the second for result sets.
+</p>
+
+<h3>Class Diagram :</h3>
+<img src="../../../doc-files/expression.png">
+
+</body>
+</html>

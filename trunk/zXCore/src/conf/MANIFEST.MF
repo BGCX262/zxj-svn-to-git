@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Package: @package@
+Extension-Name: @name@
+Specification-Version: @version@
+Specification-Vendor: 9Knots
+Specification-Title: @title@
+Implementation-Version: @version@
+Implementation-Vendor: 9Knots
+Implementation-Vendor-Id: 

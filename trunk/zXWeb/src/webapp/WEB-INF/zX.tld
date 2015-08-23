@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE taglib PUBLIC 
+	"-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN" 
+	"http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+<taglib>
+	
+	<tlibversion>1.0</tlibversion>
+	<jspversion>1.1</jspversion>
+	<shortname>zX</shortname>
+	<info>zX framework custom tags</info>
+	
+	<tag>
+		<name>zx</name>
+		<tagclass>org.zxframework.web.taglib.ZXTag</tagclass>
+		<bodycontent>empty</bodycontent>
+		<info>
+			This will initialize zX and put it in the pagecontext
+		</info>
+		
+		<attribute>
+			<name>jsheader</name>
+			<required>false</required>
+		</attribute>
+		<attribute>
+			<name>checklogin</name>
+			<required>false</required>
+		</attribute>
+	</tag>
+	<tag>
+		<name>timer</name>
+		<tagclass>org.zxframework.web.taglib.ZXTimerTag</tagclass>
+		<bodycontent>empty</bodycontent>
+		<info>
+			This is used for timing applications
+		</info>
+		
+		<attribute>
+			<name>action</name>
+			<required>true</required>
+		</attribute>
+	</tag>
+	
+</taglib>

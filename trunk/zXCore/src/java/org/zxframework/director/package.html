@@ -1,0 +1,142 @@
+<html>
+<head>
+<title>Overview Documentation for zX Directors</title>
+</head>
+
+<body>
+<p>
+Director is a simple scripting language to allow developers to quick get value that are live in the framework.
+</p>
+
+<p>
+Directors are the predecessor of expressions and are a very simple (and thus quick and cheap) 
+way of providing dynamic values where required.  The history of directors and expressions have 
+brought some confusion to the Framework for which our apologies. 
+</p>
+
+<p>
+Where applicable, you can enter either a literal value or a director. A ‘#’ as the first character indicates 
+that the value is to be interpreted as a director. Otherwise, the value is taken as a literal.
+</p>
+
+<p>
+Directors (and expressions) are mainly applicable to Web development but are part of the core of zX. 
+In descriptors only the default value can be entered as a director (and, to add to the confusion, 
+not even in its most standard way!).
+</p>
+
+<p>
+The archetype of the directors is <i>#qs.-pk</i>, indicating that there is an entry in the quick-context 
+with the name ‘–pk’ whose value is to be used. Readers with even the smallest exposure to page-flow 
+development will recognize this.
+</p>
+
+<p>
+Other director examples are: <i>#date</i> (today’s date) and <i>#user</i> (user-id of current user).
+</p>
+
+<p>
+Another director is the <i>#expr</i> director. This can be used to evaluate an expression in a situation where 
+a director is allowed. For example: <i>#expr.add(1, 8)</i>.
+</p>
+
+<p>
+Directors are supported by the class <i>DrctrHndlr</i>. Although zX can act as a factory for an instance of this 
+object, it is not likely that you will use this directly. Instead, you should use the <i>resolveDirector</i> method 
+of zX.
+</p>
+
+<p>
+Directors are always treated as strings and this is an essential difference with expressions whose result is 
+treated as a property object (unless invoked using the #expr director of-course when the result is converted 
+to a string). 
+</p>
+
+<h3>Director Handlers</h3>
+
+Director functions are implemented much like expression handlers although it is very unlikely that 
+anybody would ever bother to add a director function handler (in fact: I would personally discourage them!).  
+For completeness: the interface director handlers must implement is <i>DrcrtFH</i> and <i>DrcrtFHDefault</i> is 
+an implementation that is part of the zX core.<br/>
+
+<b>Important note:</b> director functions are not prefixed with the logical name of the handler.
+
+<h3>The Big Director Confusion</h3>
+
+<p>Back to the confusion about directors and time for some history.</p>
+
+<p>
+Directors where part of zX almost from day 1, long before expressions. Directors where introduced 
+especially for page-flow development (the <i>#qs.-pk</i> example!). 
+Soon, we realised that sometimes a simple director was not enough and that we sometimes needed a piece 
+of text where some elements where replaced at run-time, i.e. directors contained in a string. This was 
+mainly triggered by URLs and labels in page-flows.
+</p>
+
+<p>
+The problem with simple directors was that the ‘#’ was a perfect token to recognize the start of a 
+director but there was no way to tell that the director was done and the containing text was to be 
+taken literally again. Thus we introduced <b>in-string</b> directors. A special type of directors supported 
+in only a few places in page-flows.  
+</p>
+
+<p>
+An in-string-director is a text that may contain directors enclosed in a pair of ‘#’. Examples are:
+</p>
+
+<table border="1">
+<tr>
+<td>
+<pre>
+<code>
+
+ Search #entitylabel#
+ zXCloseSubSession('#qs.-s#', '#qs.-ss#')</code></pre>
+</td>
+</tr>
+</table>
+
+<p>
+Later we introduced expressions and you could use the concat function to achieve the same.
+</p>
+
+<p>
+When we were really up to speed with expressions we realised that there are occasions 
+were the good old in-string director was much more convenient that a complex expression 
+with lots of parameters to the concat function.  A typical scenario is a template for a text 
+that you want to use for data-merge purposes. <br/>
+Because a text tends to have some form of layout, the concat function is too cumbersome. 
+However, the in-string-director is too limited for a number of reasons:
+</p>
+
+<ul>
+<li>
+It never supported an escape character so you could not use a ‘#’ in a director; 
+this was particularly inconvenient if you wanted to make complex directors using the #expr option
+</li>
+<li>
+You could not nest directors 
+</li>
+</ul>
+
+<p>
+So we introduced the ultimate in-string-director. This can be used wherever you can use in-string-directors. 
+Instead of using a pair of ‘#’, we now use a pair of ‘>’. The difference may seem subtle but it did 
+allow us to write a director handler than can deal with very complex merge-texts.
+</p>
+
+<p>As a rule of thumb:</p>
+
+<ul>
+<li>Use simple directors where possible</li>
+<li>Use #expr option and an expression for more complex cases where layout of the result is not relevant</li>
+<li>Use traditional in-string-director in label, URL and Javascript tag in pagef-flows</li>
+<li>Use complex in-string-directors in other scenarios</li>
+</ul>
+
+
+<h3>Class Diagram :</h3>
+<img src="../../../doc-files/director.png">
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<pageflow>
+	<name>zXSetPrntr</name>
+	<helpid>zXSetPrntr_helpid</helpid>
+	<title>
+		<EN><![CDATA[Set My Printers]]></EN>
+	</title>
+	<htmldebug>zOff</htmldebug>
+	<startaction>setPrinter.edit</startaction>
+	<propagateqs>zYes</propagateqs>
+	<baseurl>
+		<url><![CDATA[../jsp/zXGPF.jsp]]></url>
+		<urltype>zFixed</urltype>
+	</baseurl>
+	<actions>
+		<action type="zEditForm">
+			<helpid>zXSetPrntr__helpid</helpid>
+			<name>setPrinter.edit</name>
+			<title>
+				<EN><![CDATA[Set My Printers]]></EN>
+			</title>
+			<left>420</left>
+			<top>525</top>
+			<link>
+			</link>
+			<formaction>
+				<url><![CDATA[setPrinter.update]]></url>
+				<urltype>zAction</urltype>
+			</formaction>
+			<entities>
+				<item>
+					<name>zXUsrPrf</name>
+					<entity><![CDATA[zXUsrPrf]]></entity>
+					<pk>#user</pk>
+					<wheregroup>Search</wheregroup>
+					<selecteditgroup><![CDATA[id,prntr1,prntr2]]></selecteditgroup>
+					<selectlistgroup>All</selectlistgroup>
+					<lockgroup>id</lockgroup>
+					<listgroup><![CDATA[Description]]></listgroup>
+					<copygroup>All</copygroup>
+					<resolvefk>zNo</resolvefk>
+					<allownew>zYes</allownew>
+				</item>
+			</entities>
+			<stickyqsaction></stickyqsaction>
+			<cached>zNo</cached>
+			<buttons>
+				<item>
+					<name>zSubmit</name>
+					<startsubmenu>zNo</startsubmenu>
+					<url>
+						<urltype>zFixed</urltype>
+					</url>
+				</item>
+			</buttons>
+			<refs>
+				<item>
+					<name>zBack</name>
+					<startsubmenu>zNo</startsubmenu>
+					<url>
+						<url><![CDATA[zXMMShow('#qs.-s#')]]></url>
+						<urltype>zFixed</urltype>
+						<frameno>0</frameno>
+					</url>
+				</item>
+			</refs>
+			<editformtype>normal</editformtype>
+		</action>
+		<action type="zCreateUpdate">
+			<name>setPrinter.update</name>
+			<entityaction>setPrinter.edit</entityaction>
+			<left>4500</left>
+			<top>360</top>
+			<link>
+				<action><![CDATA[setPrinter.setMessage]]></action>
+			</link>
+			<formaction>
+				<urltype>zAction</urltype>
+			</formaction>
+			<stickyqsaction></stickyqsaction>
+			<cached>zNo</cached>
+			<linkededitform>setPrinter.edit</linkededitform>
+			<editformstartaction>
+			</editformstartaction>
+		</action>
+		<action type="zNull">
+			<name>setPrinter.setMessage</name>
+			<left>5925</left>
+			<top>1905</top>
+			<link>
+				<action><![CDATA[setPrinter.edit]]></action>
+			</link>
+			<formaction>
+				<urltype>zAction</urltype>
+			</formaction>
+			<infomsg>
+				<EN><![CDATA[Printers updated]]></EN>
+			</infomsg>
+			<stickyqsaction></stickyqsaction>
+			<cached>zNo</cached>
+		</action>
+	</actions>
+</pageflow>

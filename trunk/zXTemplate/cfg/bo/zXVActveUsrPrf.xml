@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<entity>
+	<name>zXVActveUsrPrf</name>
+	<basedon>zxUsrPrf</basedon>
+	<version><![CDATA[V1.0]]></version>
+	<lastchange><![CDATA[BD11JAN04 - Created]]></lastchange>
+	<comment><![CDATA[This is a view on zXUsrPrf that only returns the active users; i.e. the ones that are a member of the user group ALL]]></comment>
+	<label>
+		<EN>
+			<label><![CDATA[User profile]]></label>
+			<description><![CDATA[User profile]]></description>
+		</EN>
+	</label>
+	<helpid>zxUsrPrf_helpId</helpid>
+	<size>zSmall</size>
+	<table>zXVActveUsrPrf</table>
+	<sequence>seq_zxUsrPrf</sequence>
+	<classname>zx.clsUsrPrf</classname>
+	<auditable>none</auditable>
+	<deleterule>allowed</deleterule>
+	<attributes>
+	</attributes>
+	<attributegroups>
+	</attributegroups>
+	<security>
+		<delete>
+			<group>Admin</group>
+		</delete>
+	</security>
+</entity>
